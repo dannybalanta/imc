@@ -4,7 +4,17 @@ function bodyIndex () {
     basic.showString("a:" + altura + "m")
     basic.pause(2000)
     imc = masa / altura ** 2
+    basic.pause(2000)
     basic.showString("IMC:" + Math.round(imc) + "kg/m2")
+    if (imc >= 18.5 && imc <= 24.9) {
+        basic.showIcon(IconNames.Yes)
+    } else if (imc >= 25 && imc <= 29.9) {
+        basic.showIcon(IconNames.Sad)
+    } else if (imc > 30) {
+        basic.showIcon(IconNames.No)
+    } else {
+        basic.showString("!")
+    }
     basic.pause(2000)
     basic.clearScreen()
 }
